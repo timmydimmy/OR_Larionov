@@ -1,0 +1,44 @@
+bash: rsync: command not found
+rsync: connection unexpectedly closed (0 bytes received so far) [sender]
+rsync error: error in rsync protocol data stream (code 12) at /AppleInternal/Library/BuildRoots/e0873e53-5185-11ef-9a51-9ab6d782fe32/Library/Caches/com.apple.xbs/Sources/rsync/rsync/io.c(453) [sender=2.6.9]
+Синхронизация удалённой папки с локальной началась...
+bash: rsync: command not found
+rsync: connection unexpectedly closed (0 bytes received so far) [receiver]
+rsync error: error in rsync protocol data stream (code 12) at /AppleInternal/Library/BuildRoots/e0873e53-5185-11ef-9a51-9ab6d782fe32/Library/Caches/com.apple.xbs/Sources/rsync/rsync/io.c(453) [receiver=2.6.9]
+Синхронизация завершена. Отправка отчёта...
+building file list ... done
+deleting untitled file.txt
+./
+
+sent 83 bytes  received 26 bytes  24.22 bytes/sec
+total size is 0  speedup is 0.00
+Синхронизация удалённой папки с локальной началась...
+receiving file list ... done
+
+sent 16 bytes  received 70 bytes  13.23 bytes/sec
+total size is 0  speedup is 0.00
+Синхронизация завершена. Отправка отчёта...
+building file list ... done
+./
+local.txt
+
+sent 141 bytes  received 48 bytes  54.00 bytes/sec
+total size is 0  speedup is 0.00
+Синхронизация удалённой папки с локальной началась...
+receiving file list ... done
+
+sent 16 bytes  received 89 bytes  30.00 bytes/sec
+total size is 0  speedup is 0.00
+Синхронизация завершена. Отправка отчёта...
+building file list ... done
+deleting untitled file.txt
+./
+
+sent 102 bytes  received 26 bytes  28.44 bytes/sec
+total size is 0  speedup is 0.00
+Синхронизация удалённой папки с локальной началась...
+receiving file list ... done
+
+sent 16 bytes  received 89 bytes  30.00 bytes/sec
+total size is 0  speedup is 0.00
+Синхронизация завершена. Отправка отчёта...
