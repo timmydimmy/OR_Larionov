@@ -1,0 +1,32 @@
+[2025-05-27T13:24:05.439+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: load_csv_to_mysql.load_csv manual__2025-05-27T13:24:03.934037+00:00 [queued]>
+[2025-05-27T13:24:05.452+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: load_csv_to_mysql.load_csv manual__2025-05-27T13:24:03.934037+00:00 [queued]>
+[2025-05-27T13:24:05.452+0000] {taskinstance.py:2170} INFO - Starting attempt 1 of 1
+[2025-05-27T13:24:05.463+0000] {taskinstance.py:2191} INFO - Executing <Task(PythonOperator): load_csv> on 2025-05-27 13:24:03.934037+00:00
+[2025-05-27T13:24:05.469+0000] {standard_task_runner.py:60} INFO - Started process 284 to run task
+[2025-05-27T13:24:05.471+0000] {standard_task_runner.py:87} INFO - Running: ['airflow', 'tasks', 'run', 'load_csv_to_mysql', 'load_csv', 'manual__2025-05-27T13:24:03.934037+00:00', '--job-id', '4', '--raw', '--subdir', 'DAGS_FOLDER/load_csv_to_mysql.py', '--cfg-path', '/tmp/tmpv6j6ueta']
+[2025-05-27T13:24:05.473+0000] {standard_task_runner.py:88} INFO - Job 4: Subtask load_csv
+[2025-05-27T13:24:05.487+0000] {logging_mixin.py:188} WARNING - /home/airflow/.local/lib/python3.8/site-packages/airflow/settings.py:194 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2025-05-27T13:24:05.526+0000] {task_command.py:423} INFO - Running <TaskInstance: load_csv_to_mysql.load_csv manual__2025-05-27T13:24:03.934037+00:00 [running]> on host e0d48ac59603
+[2025-05-27T13:24:05.623+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='airflow' AIRFLOW_CTX_DAG_ID='load_csv_to_mysql' AIRFLOW_CTX_TASK_ID='load_csv' AIRFLOW_CTX_EXECUTION_DATE='2025-05-27T13:24:03.934037+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-05-27T13:24:03.934037+00:00'
+[2025-05-27T13:24:05.652+0000] {taskinstance.py:2698} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/taskinstance.py", line 433, in _execute_task
+    result = execute_callable(context=context, **execute_callable_kwargs)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/python.py", line 199, in execute
+    return_value = self.execute_callable()
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/python.py", line 216, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+  File "/opt/airflow/dags/load_csv_to_mysql.py", line 9, in load_csv_to_mysql
+    engine = sqlalchemy.create_engine("mysql+pymysql://root:root@mysql:3306/source_db")
+  File "<string>", line 2, in create_engine
+  File "/home/airflow/.local/lib/python3.8/site-packages/sqlalchemy/util/deprecations.py", line 375, in warned
+    return fn(*args, **kwargs)
+  File "/home/airflow/.local/lib/python3.8/site-packages/sqlalchemy/engine/create.py", line 544, in create_engine
+    dbapi = dialect_cls.dbapi(**dbapi_args)
+  File "/home/airflow/.local/lib/python3.8/site-packages/sqlalchemy/dialects/mysql/pymysql.py", line 80, in dbapi
+    return __import__("pymysql")
+ModuleNotFoundError: No module named 'pymysql'
+[2025-05-27T13:24:05.664+0000] {taskinstance.py:1138} INFO - Marking task as FAILED. dag_id=load_csv_to_mysql, task_id=load_csv, execution_date=20250527T132403, start_date=20250527T132405, end_date=20250527T132405
+[2025-05-27T13:24:06.037+0000] {standard_task_runner.py:107} ERROR - Failed to execute job 4 for task load_csv (No module named 'pymysql'; 284)
+[2025-05-27T13:24:06.074+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 1
+[2025-05-27T13:24:06.098+0000] {taskinstance.py:3280} INFO - 0 downstream tasks scheduled from follow-on schedule check

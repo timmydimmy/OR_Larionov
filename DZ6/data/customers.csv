@@ -1,0 +1,6 @@
+id;full_name;email;country;created_at
+1;Alice Brown;alice@example.com;USA;2024-01-01 10:00:00
+2;Bob Smith;bob@example.com;Canada;2024-01-02 11:00:00
+3;Charlie Doe;charlie@example.com;UK;2024-01-03 12:00:00
+...
+20;Zara Lane;zara@example.com;Germany;2024-01-20 14:00:00
